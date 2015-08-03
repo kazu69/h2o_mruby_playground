@@ -29,6 +29,10 @@ RUN make install
 RUN mkdir -p /usr/local/h2o/conf
 RUN cp examples/h2o/h2o.conf /usr/local/h2o/conf/
 
+WORKDIR /etc/h2o/ssl/
+
+RUN openssl genrsa -out server.key 2048 ; openssl req -new -key server.key -out server.csr -subj '/C=JP/ST=Tokyo/L=Tokyo/O=Example Ltd./OU=Web/CN=localhost' ; openssl x509 -in server.csr -days 3650 -req -signkey server.key > server.crt
+
 ONBUILD ADD conf/h2o.conf /usr/local/h2o/conf/h2o.conf
 
 CMD ['/usr/local/bin/h2o', '-c', '/usr/local/h2o/conf/h2o.conf']
