@@ -33,8 +33,6 @@ WORKDIR /etc/nginx/ssl
 RUN openssl genrsa -out server.key 2048 ; openssl req -new -key server.key -out server.csr -subj '/C=JP/ST=Tokyo/L=Tokyo/O=Example Ltd./OU=Web/CN=localhost' ; openssl x509 -in server.csr -days 3650 -req -signkey server.key > server.crt
 
 ADD conf/nginx.conf /usr/local/nginx/conf/nginx.conf
-ADD conf/server.crt /usr/local/nginx/conf/server.crt
-ADD conf/server.key /usr/local/nginx/conf/server.key
 ADD hook /usr/local/nginx/hook
 ADD html /usr/local/nginx/html
 
