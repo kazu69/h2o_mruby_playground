@@ -29,11 +29,13 @@ RUN make install
 RUN mkdir -p /usr/local/h2o/conf
 ADD conf/h2o.conf /usr/local/h2o/conf/h2o.conf
 
-WORKDIR /etc/h2o/ssl/
+WORKDIR /etc/
+
+RUN mkdir -p h2o/ssl
+
+WORKDIR /etc/h2o/ssl
 
 RUN openssl genrsa -out server.key 2048 ; openssl req -new -key server.key -out server.csr -subj '/C=JP/ST=Tokyo/L=Tokyo/O=Example Ltd./OU=Web/CN=localhost' ; openssl x509 -in server.csr -days 3650 -req -signkey server.key > server.crt
-
-RUN mkdir -p /var/log/h2o
 
 ADD hook /usr/local/h2o/hook
 ADD http1_doc /usr/local/h2o/http1_doc

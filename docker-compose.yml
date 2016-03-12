@@ -1,7 +1,7 @@
 nginx:
   build: ./nginx/
   ports:
-    - '8000:80'
+    - '6443:443'
 h2o:
   build: ./h2o/
   links:
