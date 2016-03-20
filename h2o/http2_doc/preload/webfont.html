@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Webfont Preload</title>
+    <link rel="preload" href="https://raw.githubusercontent.com/google/fonts/master/ofl/passionone/PassionOne-Regular.ttf" as="font" crossorigin>
+    <style>
+        @font-face {
+            font-family: 'Lobster';
+            src: local('Lobster'), url('https://raw.githubusercontent.com/google/fonts/master/ofl/lobster/Lobster-Regular.ttf') format('truetype');
+        }
+        .load {
+            font-family: 'Lobster';
+        }
+        /* latin-ext */
+        @font-face {
+            font-family: 'Passion One';
+            src: local('Passion One'), local('PassionOne'), url('https://raw.githubusercontent.com/google/fonts/master/ofl/passionone/PassionOne-Regular.ttf') format('truetype');
+        }
+        .preload {
+            font-family: 'Passion One';
+        }
+    </style>
+</head>
+<body>
+    <div class="load">web font from link rel stylesheet</div>
+    <div class="preload">web font from link rel preload</div>
+</body>
+</html>

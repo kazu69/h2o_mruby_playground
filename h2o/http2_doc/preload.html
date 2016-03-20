@@ -1,0 +1,64 @@
+<!doctype html>
+<html class="no-js" lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <script>
+            function addStlySheets() {
+                var style = document.createElement('link');
+                    style.href = this.href;
+                    style.rel = 'stylesheet';
+                document.head.appendChild(style);
+                console.info('add ' + this.href + ' done!');
+            }
+
+            function addScripts() {
+                var script = document.createElement('script');
+                    script.src = this.href;
+                document.body.appendChild(script);
+                console.info('add ' + this.href + ' done!');
+            }
+        </script>
+
+        <!-- normalize -->
+        <link rel="preload" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css" integrity="sha384-+K7c3ujxU/SqpJg+sVdgOemJ3tcpzSGHWv3+1TgPb20j3DmE2srNJo5kVStOVq4k" crossorigin="anonymous" onload="addStlySheets();">
+
+        <!-- bootstrap -->
+        <link rel="preload" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" onload="console.info('bootstrap.min.css load done');">
+        <link rel="preload" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous" onload="addStlySheets();">
+
+        <!-- font awasome -->
+        <link rel="preload" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" onload="console.info('font-awesome.min.css load done');">
+        <link rel="preload" href="//fortawesome.github.io/Font-Awesome/assets/font-awesome/fonts/fontawesome-webfont.woff2" as="font" type="font/woff2" crossorigin onload="addStlySheets();">
+
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <p>Hello world! This is HTML5 Boilerplate.</p>
+
+        <!-- bootstrap -->
+        <link rel="preload" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous" onload="addScripts();">
+
+        <!-- modernizr -->
+        <link rel="preload" href="//ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js" onload="addScripts();">
+
+        <!-- jQuery -->
+        <link rel="preload" href="//code.jquery.com/jquery-1.12.1.js" integrity="sha256-VuhDpmsr9xiKwvTIHfYWCIQ84US9WqZsLfR4P7qF6O8=" crossorigin="anonymous" onload="addScripts();">
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+        <link rel="preload" href="//www.google-analytics.com/analytics.js" async defer onload="addScripts();">
+    </body>
+</html>

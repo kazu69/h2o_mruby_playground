@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Create Link Tag</title>
+</head>
+<body>
+    <script>
+        function addSCripts() {
+          var script = document.createElement('script');
+          script.src = 'execute.js';
+          document.body.appendChild(script);
+        }
+
+        var link = document.createElement('link');
+        link.href = 'execute.js';
+        link.rel = 'preload';
+        link.as = 'script';
+        link.addEventListener('load', addSCripts, false);
+        link.addEventListener('error', function(error) { console.log(error) }, false);
+        document.head.appendChild(link);
+    </script>
+</body>
+</html>

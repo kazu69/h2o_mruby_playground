@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Media Query</title>
+    <link rel="preload" as="image" href="image-max-width.png" media="(max-width: 640px)" onload="switchImage(this)">
+    <link rel="preload" as="image" href="image-min-width.png" media="(min-width: 640px)" onload="switchImage(this)">
+    <link rel="stylesheet" media="(max-width: 640px)" href="max-640px.css">
+    <link rel="stylesheet" media="(min-width: 640px)" href="min-640px.css">
+    <script>
+        function switchImage(element) {
+            var target = document.querySelector('#swap-image'),
+                image = document.createElement('img');
+            image.src = element.href;
+            target.appendChild(image);
+        }
+    </script>
+</head>
+<body>
+    <div id="swap-image"></div>
+</body>
+</html>

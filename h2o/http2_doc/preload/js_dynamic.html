@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Create Link Tag</title>
+</head>
+<body>
+    <script>
+        var link = document.createElement("link");
+        link.rel = "preload";
+        link.as = "style";
+        link.href = "css/style.css";
+        link.addEventListener('load', function() { this.rel = 'stylesheet' }, false);
+        link.addEventListener('error', function(error) { console.log(error) }, false);
+        document.head.appendChild(link);
+    </script>
+</body>
+</html>
